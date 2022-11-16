@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+
 import { View, StyleSheet, Dimensions } from "react-native";
-import MapView, { Polyline, UrlTile, Circle } from "react-native-maps";
 
 import { baseUrl, statusBarHeight, tileCacheDirectory } from "../constants";
 import { useTypedSelector } from "../store";
+
+import { MapView } from "@rnmapbox/maps";
 
 const styles = StyleSheet.create({
 	map: {
@@ -41,7 +46,7 @@ const MapViewContainer = (): JSX.Element => {
 
 	return (
 		<View>
-			<MapView
+			{/* <MapView
 				style={styles.map}
 				showsUserLocation={true}
 				initialRegion={{
@@ -87,7 +92,8 @@ const MapViewContainer = (): JSX.Element => {
 						);
 					}
 				})}
-			</MapView>
+			</MapView> */}
+			<MapView />
 		</View>
 	);
 };
