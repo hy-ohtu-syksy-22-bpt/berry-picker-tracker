@@ -44,7 +44,7 @@ const MapViewContainer = (): JSX.Element => {
 
 	return (
 		<View>
-			<Mapbox.MapView styleURL={`https://pastebin.com/Xaqpuvf9`} />
+			<Mapbox.MapView styleURL={`https://pastebin.com/raw/Xaqpuvf9`} />
 		</View>
 	);
 };
