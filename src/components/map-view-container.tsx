@@ -3,7 +3,9 @@ import { View, StyleSheet, Dimensions } from "react-native";
 import { baseUrl, statusBarHeight, tileCacheDirectory } from "../constants";
 import { useTypedSelector } from "../store";
 
-import { MapView } from "@rnmapbox/maps";
+import Mapbox from "@rnmapbox/maps";
+
+Mapbox.setAccessToken("");
 
 const styles = StyleSheet.create({
 	map: {
@@ -42,54 +44,7 @@ const MapViewContainer = (): JSX.Element => {
 
 	return (
 		<View>
-			{/* <MapView
-				style={styles.map}
-				showsUserLocation={true}
-				initialRegion={{
-					latitude: 60.204662,
-					longitude: 24.962535,
-					latitudeDelta: 0.01,
-					longitudeDelta: 0.01,
-				}}
-			>
-				<UrlTile
-					urlTemplate={`${baseUrl}/nlsapi/{z}/{y}/{x}`}
-					tileSize={256}
-					maximumZ={19}
-					zIndex={-3}
-					tileCachePath={tileCacheDirectory}
-					tileCacheMaxAge={172800}
-					offlineMode={false}
-				/>
-				<Polyline
-					coordinates={routeInfo.showRoute ? localWaypoints : []}
-					strokeColor="red"
-					strokeWidth={4}
-					zIndex={2}
-				/>
-				<Polyline
-					coordinates={routeInfo.showRoute ? localWaypoints : []}
-					strokeColor="black"
-					strokeWidth={8}
-					zIndex={1}
-				/>
-				{localWaypoints.map((waypoint, index) => {
-					if (waypoint.connection !== null) {
-						return (
-							<Circle
-								key={index}
-								center={{
-									latitude: waypoint.latitude,
-									longitude: waypoint.longitude,
-								}}
-								fillColor={getCircleColor(waypoint.connection)}
-								radius={15}
-							/>
-						);
-					}
-				})}
-			</MapView> */}
-			<MapView />
+			<Mapbox.MapView styleURL={`https://pastebin.com/Xaqpuvf9`} />
 		</View>
 	);
 };
